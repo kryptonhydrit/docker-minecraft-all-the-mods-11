@@ -7,7 +7,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV SERVER_CONFIG_AUTO_MODE=true
 
 RUN apt-get update -y && \
-    apt-get upgrade -y && \
     apt-get install libarchive-tools \
         curl -y
 

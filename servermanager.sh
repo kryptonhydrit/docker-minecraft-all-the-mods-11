@@ -8,8 +8,8 @@ BLUE="\033[0;34m"
 NC="\033[0m"
 
 # Variables
-_SERVER_VERSION="0.0.2"
-_SERVER_DOWNLOAD_PATH="7933/122"
+_SERVER_VERSION="0.0.4"
+_SERVER_DOWNLOAD_PATH="7939/128"
 _SERVER_FILES="ServerFiles-${_SERVER_VERSION}.zip"
 
 echo -e "${BLUE}> [DEBUG] ATM11 - Server version: ${_SERVER_VERSION}${NC}"
@@ -38,7 +38,7 @@ if [[ ! -f "$_SERVER_FILES" ]]; then
         neoforge*
     curl -Lo "$_SERVER_FILES" "https://mediafilez.forgecdn.net/files/$_SERVER_DOWNLOAD_PATH/$_SERVER_FILES" || exit 1
     bsdtar -xf $_SERVER_FILES --strip-component 1
-    ATM10_INSTALL_ONLY=true /bin/bash startserver.sh
+    ATM11_INSTALL_ONLY=true /bin/bash startserver.sh
 fi
 
 source /includes/config.sh
