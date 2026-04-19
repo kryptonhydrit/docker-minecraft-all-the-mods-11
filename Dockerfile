@@ -4,7 +4,7 @@ LABEL maintainer="kryptonhydrit <kryptonhydrit@kryptonhydrit.de>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-ENV SERVER_CONFIG_AUTO_MODE=true
+ENV MANAGE_SERVER_PROPERTIES=true
 
 RUN apt-get update -y && \
     apt-get install libarchive-tools \
@@ -12,7 +12,6 @@ RUN apt-get update -y && \
 
 COPY --chmod=755 servermanager.sh /servermanager.sh
 COPY --chmod=755 includes/ /includes
-COPY --chmod=644 configs/ /configs
 
 EXPOSE 25565/tcp
 

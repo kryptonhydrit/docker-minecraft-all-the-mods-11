@@ -21,14 +21,14 @@ fi
 
 cd /data
 
-if [[ "$EULA" == "true" ]]; then
+if [[ "${EULA}" == "true" ]]; then
     echo "eula=true" > /data/eula.txt
 else
     echo -e "${RED}> [ERROR] You must accept the eula to install the server!${NC}"
     exit 0
 fi
 
-if [[ ! -f "$_SERVER_FILES" ]]; then
+if [[ ! -f "${_SERVER_FILES}" ]]; then
     rm -rf config \
         defaultconfigs \
         kubejs \
@@ -36,11 +36,14 @@ if [[ ! -f "$_SERVER_FILES" ]]; then
         packmenu \
         libraries \
         neoforge*
-    curl -Lo "$_SERVER_FILES" "https://mediafilez.forgecdn.net/files/$_SERVER_DOWNLOAD_PATH/$_SERVER_FILES" || exit 1
-    bsdtar -xf $_SERVER_FILES --strip-component 1
+    curl -Lo "${_SERVER_FILES}" "https://mediafilez.forgecdn.net/files/${_SERVER_DOWNLOAD_PATH}/${_SERVER_FILES}" || exit 1
+    bsdtar -xf ${_SERVER_FILES} --strip-component 1
     ATM11_INSTALL_ONLY=true /bin/bash startserver.sh
 fi
 
-source /includes/config.sh
+if [[ ${MANAGE_SERVER_PROPERTIES} == "true" ]]; then
+    . /includes/generate-server-properties.sh
+    . /includes/generate-player-list-files.sh
+fi
 
 /bin/bash run.sh nogui
