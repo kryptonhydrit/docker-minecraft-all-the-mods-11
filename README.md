@@ -32,7 +32,7 @@ On first run the container will download and install the tagged Version ´[All t
 > The container supports all keys of Minecraft version 26.1.2.
 > For the individual descriptions please have a look at the [documentation](https://minecraft.wiki/w/Server.properties#Keys).\
 > For configuration purposes, entries from the `server.properties` file can be mapped to environment variables using a simple normalization scheme.\
-   > Each property key is converted to uppercase, and all dots (`.`) and hyphens (`-`) are replaced with underscores (`_`).
+> Each property key is converted to uppercase, and all dots (`.`) and hyphens (`-`) are replaced with underscores (`_`).
 
 ### Server settings
 | Variable | Description | Type |
@@ -44,7 +44,7 @@ On first run the container will download and install the tagged Version ´[All t
 | Variable | Description |
 | --- | --- |
 | OPS_LIST | Comma-separated list of players to assign operator rights |
-| ALLOW_LIST | Comma-separated list of players to add to the whitelist |See [this file](/docs/ENV_VARS.md) for the documentation
+| ALLOW_LIST | Comma-separated list of players to add to the whitelist |
 
 ## FAQ
 
