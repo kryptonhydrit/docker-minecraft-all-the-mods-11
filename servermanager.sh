@@ -8,8 +8,8 @@ BLUE="\033[0;34m"
 NC="\033[0m"
 
 # Variables
-_SERVER_VERSION="0.8.0-beta"
-_SERVER_DOWNLOAD_PATH="8828/839"
+_SERVER_VERSION="0.9.0-beta"
+_SERVER_DOWNLOAD_PATH="8916/964"
 _SERVER_FILES="ServerFiles-${_SERVER_VERSION}.zip"
 
 echo -e "${BLUE}> [DEBUG] ATM11 - Server version: ${_SERVER_VERSION}${NC}"
